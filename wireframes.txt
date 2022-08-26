@@ -1,0 +1,34 @@
+const mongoose = require('mongoose');
+
+const loginSchema = new mongoose.Schema({
+    name: { type: String, unique: [true, `Name can't match any other person name currently in database`], required: [true, 'You must enter a name'] },
+    image: { type: Img, required: [false, 'You can leave a default image'] },
+    password: { type: String, unique: [true, `password can't match any other person name currently in database`], required: [true, 'You must enter a password']'] },
+});
+
+const Login = mongoose.model('Login', loginSchema);
+
+*
+
+const profileSchema = new mongoose.Schema({
+    name: { type: String, unique: [true, `Name can't match any other person name currently in database`], required: [true, 'You must enter a name'] },
+    image: { type: Img, required: [false, 'You can leave a default image'] },
+    followers: { type: Number, min: [0, 'followers can not be negative']},
+    posts: { type: Number, min: [0, 'posts can not be negative']},
+    following: { type: Number, min: [0, 'following can not be negative']},
+});
+
+const Profile = mongoose.model('Profile', profileSchema);
+
+*
+
+const postsSchema = new mongoose.Schema({
+    comments: { type: String }
+    image: { type: Img, required: [true, 'You must link to an image'] },
+    likes: { type: Number, min: [0, 'likes can not be negative']},
+});
+
+const Posts = mongoose.model('Posts', postSchema);
+
+
+module.exports = Product; 
