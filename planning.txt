@@ -1,0 +1,79 @@
+Remaking Instagram
+
+REQUIRED:
+- Express APP
+- RESTful Routes
+- Templating
+- MongoDB
+- Atleast 50 git commits
+- Propper code style
+- Visual design (flexbox, css grid, ect)
+- Heroku?
+- Documentation (readme file)
+
+
+Search bar - users, hashtags
+Picture of yourself that goes to your profile
+Button for posting
+Create account
+account- comment and like 
+follow - stretch goal
+Users can login and follow each other
+log out button
+delete button on posts
+delete button on comments
+edit button on posts
+edit button on comments
+
+start with desktop, if have time work on mobile version
+
+when create post user links to image, look up how hard it would be to allow for uploads?
+
+
+Wireframes-
+Log in page
+Register Page
+Profile page
+Posting Page
+Feed
+
+instadupe.com/userName -> show page for profile
+
+Database Models:
+
+user {
+    name:,
+    password:,
+    email?:,
+    profileImage:,
+    bio:,
+    following: [],
+    followers: [],
+    posts: [],
+}
+
+posts {
+    user:
+    image:,
+    comments: [],
+    likes:
+}
+
+<button> -> post.likes++
+
+buttonPressed = false;
+buttonpressevent -> if buttonPressed = true then post.likes++, buttonPressed = true, else { return }
+
+
+Work Division:
+
+Features - 
+- Routes - Everyone
+- HTML - Everyone
+- Database - Sean
+- CSS - Manases
+- Users - Sean
+- Follow - Sean
+- Login - Sumaiya
+- Posting - Manases
+- Comments - Sumaiya
