@@ -10,4 +10,8 @@ router.get('/', (req, res) => {
     res.render('home.ejs')
 })
 
+router.get('/posts', (req, res) => {
+    res.render('posts.ejs')
+});
+
 module.exports = router; 
