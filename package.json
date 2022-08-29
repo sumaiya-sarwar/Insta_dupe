@@ -1,0 +1,29 @@
+{
+  "name": "insta_dupe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumaiya-sarwar/Insta_dupe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumaiya-sarwar/Insta_dupe/issues"
+  },
+  "homepage": "https://github.com/sumaiya-sarwar/Insta_dupe#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.5.3",
+    "nodemon": "^2.0.19"
+  }
+}
