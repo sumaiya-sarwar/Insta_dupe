@@ -7,6 +7,6 @@ const postsSchema = new mongoose.Schema({
     user: { type: mongoose.Types.ObjectID, required: [true, 'You must be a user'], ref: 'User' }
 }, { timestamps: true });
 
-const Posts = mongoose.model('Posts', postSchema);
+const Posts = mongoose.model('Posts', postsSchema);
 
 module.exports = Posts; 
