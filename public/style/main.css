@@ -1,5 +1,6 @@
 
 html {
-    background-color: rgb(18, 18, 18);
+    background: radial-gradient(#272727, #000000);
     color: white;
+    background-color: black;
 }
