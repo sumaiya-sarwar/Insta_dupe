@@ -40,26 +40,26 @@ const posts = [
     {
         image: 'https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/WOPA160517_D056-resized.jpg?crop=864%2C0%2C1728%2C2304&wid=600&hei=800&scl=2.88',
         likes: 5,
-        user: '630e1186adcd2c0c14d07be9',
+        user: '630e1f32c48acac791badf53',
         comments: []
     },
     {
         image: 'https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg',
         likes: 88,
-        user: '630e1186adcd2c0c14d07be9',
+        user: '630e1f32c48acac791badf53',
         comments: []
     },
 ]
 
 async function reloadData() {
     try {
-        let deleted = await db.User.deleteMany({});
+        //let deleted = await db.User.deleteMany({});
         let deletedPosts = await db.Posts.deleteMany({});
-        console.log(deleted, deletedPosts);
+        //console.log(deleted, deletedPosts);
         // console.log(deleted);
-        let reloading = await db.User.insertMany(users);
+        //let reloading = await db.User.insertMany(users);
         let reloadPosts = await db.Posts.insertMany(posts);
-        console.log(reloading, reloadPosts);
+        //console.log(reloading, reloadPosts);
     } catch (err) {
         console.log(err);
     }

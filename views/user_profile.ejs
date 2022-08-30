@@ -8,28 +8,38 @@
     <title>
         <%=user.name%>'s Profile'>
     </title>
+    <link rel="stylesheet" href="/style/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- basic layout to test database connection and starting point for layout -->
-    <img src="<%=user.image%>" alt="user profile image">
-    <h1>
+    <div class="username">
         <%=user.name%>
-    </h1>
-    <h3>
-        <%=user.followers%> followers
-    </h3>
-    <h3>
-        <%=user.following%> following
-    </h3>
-    <p>
-        <%=user.bio%>
-    </p>
-    <h3>
-        <%=user.posts.length%> posts
-    </h3>
+    </div>
+    <div class="profileImageContainer">
+        <img class="profileImage" src="<%=user.image%>" alt="user profile image">
+    </div>
+    <div class="profileStats">
+        <h3>
+            <%=user.followers%> followers
+        </h3>
+        <h3>
+            <%=user.following%> following
+        </h3>
 
-    //for loop posting each of users posts
+        <h3>
+            <%=user.posts.length%> posts
+        </h3>
+    </div>
+    <div class="bio">
+        <p>
+            <%=user.bio%>
+        </p>
+    </div>
+
 </body>
 
 </html>

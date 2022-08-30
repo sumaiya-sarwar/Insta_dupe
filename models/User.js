@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     name: { type: String, required: [true, 'You must enter a name'] },
     image: { type: String, required: [false, 'You can leave a default image'] },
     followers: { type: Number, min: [0, 'followers can not be negative'] },
-    posts: [{ type: Number }],
+    posts: [{ type: mongoose.Types.ObjectId, ref: 'Posts' }],
     following: { type: Number, min: [0, 'following can not be negative'] },
     password: { type: String, required: [true, 'You must enter a password'] },
     bio: { type: String }

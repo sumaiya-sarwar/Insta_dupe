@@ -10,7 +10,7 @@ const db = require("../models");
 
 router.get('/:id/profile', async (req, res) => {
     try {
-        const user = await db.User.findById('630d2758dbec20fb8744d986');
+        const user = await db.User.findById(req.params.id);
         const context = { user: user }
         res.render('user_profile.ejs', context)
     } catch (err) {
