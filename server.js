@@ -30,8 +30,8 @@ app.use(session({
 app.use('', userController);
 app.use('/', mainController);
 
-app.get('/*', (req, res) => {
-    res.render('404.ejs')
-})
+// app.get('/*', (req, res) => {
+//     res.render('404.ejs')
+// })
 
 app.listen(PORT, () => console.log('starting server at port:', PORT));
