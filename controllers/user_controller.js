@@ -18,8 +18,8 @@ router.get('/:id/profile', async (req, res) => {
     }
 })
 
-router.get('/login', (req, res) => {
-    res.render('login.ejs');
+router.get('/signup', (req, res) => {
+    res.render('signup.ejs');
 })
 
 
