@@ -77,3 +77,15 @@ Features -
 - Login - Sumaiya
 - Posting - Manases
 - Comments - Sumaiya
+
+
+
+User Storie:
+
+- user creates an account with name, username and password
+- user then uploads their profile image and adds a bio
+- user can choose to follow other users and be followed bach
+- user can make a post
+- user can like and comment on other users post
+- user can delete their own posts and comments
+- user can edit their own posts and comments
