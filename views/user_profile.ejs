@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=user.name%>'s Profile'>
+    </title>
+</head>
+
+<body>
+    <!-- basic layout to test database connection and starting point for layout -->
+    <img src="<%=user.image%>" alt="user profile image">
+    <h1>
+        <%=user.name%>
+    </h1>
+    <h3>
+        <%=user.followers.length%> followers
+    </h3>
+    <h3>
+        <%=user.following.length%> following
+    </h3>
+    <p>
+        <%=user.bio%>
+    </p>
+    <h3>
+        <%=user.posts.length%> posts
+    </h3>
+
+    //for loop posting each of users posts
+</body>
+
+</html>
