@@ -20,8 +20,26 @@ div {
 	display: flex;
 	justify-content: center;
   text-align: center;
-  border-color: #061922;
+  border-color: hsl(199, 70%, 8%);
 }
+.button {
+    position: fixed left 20px;
+    background-color:rgb(35, 35, 35);
+    color: #fff;
+    border:none; 
+    border-radius:1px; 
+    padding:1px;
+    min-height:30px; 
+    min-width: 120px;
+  }
+      .buttton {
+           text-decoration: none;
+        color: white;
+      }
+      .button:hover {
+      background-color:rgb(67, 67, 67);
+      transition: 0.7s;
+  }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,13 +47,14 @@ div {
     <title>posts</title>
 </head>
 <body>
-
-<div class="panel-group">
-    <div class="panel_ panel-default">
-      <div class="panel-heading_">Post</div>
-      <div class="panel-body_">Content</div>
-  </div>
-</div>
+    <a class="buttton" href="/">
+		<button class="button">Go to Home</button> </a>
+    <form action="/products/posts.ejs" method="POST">
+		<label for="name">Name</label>
+		<input type="text" placeholder="Lamp Name" name="name" id="name" />
+		<label for="image">Image</label>
+		<input type="text" placeholder="link to image" name="image" id="image" />
+		<button class="button">Create Product</button>
 
 </body>
 </html>
