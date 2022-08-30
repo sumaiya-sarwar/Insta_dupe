@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sumaiya-sarwar/Insta_dupe#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.1",
