@@ -1,46 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../style/main.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Corben:700');
-
-div {
-	font-family: 'Corben', cursive;
-	color: white;
-	letter-spacing: 0.1rem;
-	text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
-}
-      
-.panel_ {
-	background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
-	min-height: 30rem;
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-  text-align: center;
-  border-color: hsl(199, 70%, 8%);
-}
-.button {
-    position: fixed left 20px;
-    background-color:rgb(35, 35, 35);
-    color: #fff;
-    border:none; 
-    border-radius:1px; 
-    padding:1px;
-    min-height:30px; 
-    min-width: 120px;
-  }
-      .buttton {
-           text-decoration: none;
-        color: white;
-      }
-      .button:hover {
-      background-color:rgb(67, 67, 67);
-      transition: 0.7s;
-  }
-    </style>
+    <link rel="stylesheet" href="../style/posts.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,12 +10,12 @@ div {
 <body>
     <a class="buttton" href="/">
 		<button class="button">Go to Home</button> </a>
-    <form action="/products/posts.ejs" method="POST">
+    <form action="/views/posts.ejs" method="POST">
 		<label for="name">Name</label>
 		<input type="text" placeholder="Lamp Name" name="name" id="name" />
 		<label for="image">Image</label>
 		<input type="text" placeholder="link to image" name="image" id="image" />
-		<button class="button">Create Product</button>
+		<button class="button">Create Post</button>
 
 </body>
 </html>
