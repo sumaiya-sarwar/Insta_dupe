@@ -21,34 +21,18 @@ router.get('/:id/profile', async (req, res) => {
 // router.get('/signup', (req, res) => {
 //     res.render('signup.ejs');
 // })
- //comments
+//comments
 router.get("/", (req, res) => {
     Comment.find({})
-              
-      .populate("comments user")
-      .exec((error, allComments) => {
-        if (error) {
-          console.log(error);
-          req.error = error;
-          return next();
-        }
-  
-        Comment.find({}, (error, all) => {
-          if (error) {
-            console.log(error);
-            req.error = error;
-            return next();
-          }
-  
-          const context = {
-            comments : allComments,
-            
-          };
-  
-          return res.render("", context);
+        .populate("comments user")
+        .exec((error, allComments) => {
+            if (error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            }
         });
-      });
-  });
+});
 
 
 module.exports = router;
