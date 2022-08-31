@@ -1,0 +1,13 @@
+img {
+    max-width: 800px;
+    max-height: 800px;
+}
+
+.postContainer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    border: solid black 3px;
+}

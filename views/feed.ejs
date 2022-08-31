@@ -5,16 +5,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/feed.css">
   <title>Document</title>
 </head>
 
 <body>
   <% posts.forEach(function(post){ %>
-    <img src="data:post/<%=post.image.contentType%>;base64,
-                        <%=post.image.data.toString('base64')%>" <h1>
-    <%=post.caption%>
-      </h1>
-      <% }) %>
+    <div class="postContainer">
+      <img src="data:post/<%=post.image.contentType%>;base64,
+    <%=post.image.data.toString('base64')%>">
+      <div class="caption">
+        <h1>
+          <%=post.caption%>
+        </h1>
+      </div>
+    </div>
+    <% }) %>
 </body>
 
 </html>
