@@ -19,10 +19,14 @@ router.get("/signup", function (req, res) {
   //login
 router.post("/home", async function (req, res, next) {
   try {
+    
     const foundUser = await User.findOne({ username: req.body.username });
-    console.log(foundUser);
+   
+     console.log('user', foundUser);
+   
     if (!foundUser) {
-      return res.redirect("/signup");
+        console.log(foundUser, 'user')
+      return res.redirect('/home');
     } else {
       const match = await bcrypt.compare(req.body.password, foundUser.password);
       if (!match) return res.send("password invalid");
@@ -31,8 +35,7 @@ router.post("/home", async function (req, res, next) {
         username: foundUser.username,
       };
     }
-
-    return res.redirect(`${foundUser._id}/profile`);
+     return res.redirect(`user/${foundUser._id}/profile`);
   } catch (err) {
     console.log(err);
     res.send(err);

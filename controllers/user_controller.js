@@ -21,10 +21,7 @@ router.get('/:id/profile', async (req, res) => {
 // router.get('/signup', (req, res) => {
 //     res.render('signup.ejs');
 // })
-
-
-
-//comments
+ //comments
 router.get("/", (req, res) => {
     Comment.find({})
               
