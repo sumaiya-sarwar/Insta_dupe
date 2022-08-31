@@ -4,7 +4,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
 
-const navLinks = require('./navLinks');
 
 
 
@@ -23,7 +22,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
-app.use(navLinks);
+
 
 app.use(session({
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
@@ -35,18 +34,18 @@ app.use(session({
     }
 }))
 
-app.use('', userController);
-app.use('/', mainController);
-app.use('/', authController);
 
-// app.get('/*', (req, res) => {
-//     res.render('404.ejs')
-// })
 
-app.use(function (req, res, next) {
-    res.locals.user = req.session.currentUser;
-    next();
-  });
+app.use('/user', userController);
+app.use('/main', mainController);
+app.use('', authController);
+
+// wildcard route
+app.route('/*', (req, res) => {
+    res.render('404.ejs')
+})
+
+
 
 
 app.listen(PORT, () => console.log('starting server at port:', PORT));

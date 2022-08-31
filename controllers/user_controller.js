@@ -44,11 +44,11 @@ router.get("/", (req, res) => {
           }
   
           const context = {
-            reviews: allReviews,
-            products: allProducts,
+            comments : allComments,
+            
           };
   
-          return res.render("reviews/index", context);
+          return res.render("", context);
         });
       });
   });
