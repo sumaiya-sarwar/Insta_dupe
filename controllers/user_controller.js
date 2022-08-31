@@ -18,9 +18,40 @@ router.get('/:id/profile', async (req, res) => {
     }
 })
 
-router.get('/signup', (req, res) => {
-    res.render('signup.ejs');
-})
+// router.get('/signup', (req, res) => {
+//     res.render('signup.ejs');
+// })
+
+
+
+//comments
+router.get("/", (req, res) => {
+    Comment.find({})
+              
+      .populate("comments user")
+      .exec((error, allComments) => {
+        if (error) {
+          console.log(error);
+          req.error = error;
+          return next();
+        }
+  
+        Comment.find({}, (error, all) => {
+          if (error) {
+            console.log(error);
+            req.error = error;
+            return next();
+          }
+  
+          const context = {
+            reviews: allReviews,
+            products: allProducts,
+          };
+  
+          return res.render("reviews/index", context);
+        });
+      });
+  });
 
 
 module.exports = router;

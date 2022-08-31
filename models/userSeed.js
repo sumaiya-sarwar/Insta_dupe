@@ -1,7 +1,7 @@
 const db = require('./index')
 const users = [
     {
-        user_name: 'SBuchas',
+        username: 'SBuchas',
         name: 'Sean Buchas',
         image: 'https://cdn.shopify.com/s/files/1/1297/1509/products/hero1_6de889fb-b540-49e4-b733-3af0baaa7f63_x1440.jpg?v=1571274629',
         followers: 9000,
@@ -12,7 +12,7 @@ const users = [
 
     },
     {
-        user_name: 'SSarwar',
+        username: 'SSarwar',
         name: 'Sumaiya Sarwar',
         image: 'https://cdn.shopify.com/s/files/1/1297/1509/products/hero1_6de889fb-b540-49e4-b733-3af0baaa7f63_x1440.jpg?v=1571274629',
         followers: 10000,
@@ -23,7 +23,7 @@ const users = [
 
     },
     {
-        user_name: 'MLopez',
+        username: 'MLopez',
         name: 'Manases Lopez',
         image: 'https://cdn.shopify.com/s/files/1/1297/1509/products/hero1_6de889fb-b540-49e4-b733-3af0baaa7f63_x1440.jpg?v=1571274629',
         followers: 11000,
