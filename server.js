@@ -3,7 +3,10 @@ const methodOverride = require('method-override');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
-const bcrypt = require('bcrypt')
+
+const navLinks = require('./navLinks');
+
+
 
 require('./config/db.connection');
 require('dotenv').config();
@@ -20,6 +23,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
+app.use(navLinks);
+
 app.use(session({
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     secret: '8675309',
@@ -32,47 +37,16 @@ app.use(session({
 
 app.use('', userController);
 app.use('/', mainController);
-app.use('/', userController);
+app.use('/', authController);
 
 // app.get('/*', (req, res) => {
 //     res.render('404.ejs')
 // })
 
+app.use(function (req, res, next) {
+    res.locals.user = req.session.currentUser;
+    next();
+  });
 
-//login/signup
-const router = express.Router();
-router.use(express.urlencoded({ extended: false }));
-
-
-app.get('/', (req, res) => {
-    res.render('index.ejs')
-})
-
-app.get('/home', (req, res) => {
-    res.render('home.ejs')
-})
-
-app.post('/home', (req, res) => {
-
-})
-
-app.get('/signup', (req, res) => {
-    res.render('signup.ejs')
-})
-
-app.post('/signup', async (req, res) => {
-    try {
-        const hPass = await bcrypt.hash(req.body.password, 8)
-        users.push({
-           username: req.body.username,
-            name: req.body.name,
-            password: hPass
-        })
-        res.redirect('/home')
-    } catch {
-        res.redirect('/signup')
-    }
-    
-})
 
 app.listen(PORT, () => console.log('starting server at port:', PORT));

@@ -1,0 +1,9 @@
+<div class="navbar-menu navbar-end">
+    <% if (typeof user !== 'undefined') { %>
+    <p class="navbar-item"><%= user.username %></p>
+    <% } %>
+    <!-- routes -->
+    <% if (typeof routes !== 'undefined') { %> <% routes.forEach((route) => { %>
+    <a class="navbar-item" href="<%= route.href %>"> <%= route.title %> </a>
+    <% }) %> <% } %>
+  </div>

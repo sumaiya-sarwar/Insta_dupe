@@ -5,19 +5,72 @@
         html {
             background-color: rgb(18, 18, 18);
             color: white;
+          text-align: center;
+        }
+* {
+    box-sizing: border-box;
+} 
 
-        }
-        .Home {
-            text-decoration: none;
-            color: rgb(140, 0, 140)
-        }
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  margin: 1px;
+}
+
+.button {
+    position: fixed left 20px;
+    background-color:red;
+    color: #fff;
+    border:none; 
+    border-radius:1px; 
+    padding:1px;
+    min-height:30px; 
+    min-width: 120px;
+  text-align: center;
+  }
+      .buttton {
+           text-decoration: none;
+        color: white;
+         text-align: center;
+      }
+      .button:hover {
+      background-color:rgb(255, 70, 70);
+      transition: 0.7s;
+         text-align: center;
+  }
+      .message{
+        margin: 50px
+      }
+      h1{
+        font-size: 100px;
+        padding: 1px;
+        margin: 1px;
+      }
+      h2 {
+        font-size: 60px;
+                padding: 1px;
+        margin: 1px;
+      }
+p {
+        font-size: 18px;
+          padding: 1px;
+        margin: 16x;
+      }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>404</title>
 </head>
 <body>
-    <h1>wrong page go back to <a class="Home" href="/">Home</a></h1>
+  <div class="message">
+    <h1>404</h1>
+  <h2>Oops, Page Not Found</h2>
+  <p>We are very sorry for the inconvenience. It looks like you're trying to 
+    <br>access a page that has been deleted or never even existed.</p>
+    <a class="buttton" href="/">
+    <button class="button">Go to Home</button> </a>
+  </div>
 </body>
 </html>

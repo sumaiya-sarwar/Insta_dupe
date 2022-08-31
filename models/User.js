@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
     posts: [{ type: mongoose.Types.ObjectId, ref: 'Posts' }],
     following: { type: Number, min: [0, 'following can not be negative'] },
     password: { type: String, required: [true, 'You must enter a password'] },
-    bio: { type: String }
+    bio: { type: String },
+}, { timestamps: true
      });
 
 const User = mongoose.model('User', userSchema);
