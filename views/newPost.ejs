@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../style/posts.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posts</title>
+</head>
+
+<body>
+    <a class="buttton" href="/">
+        <button class="button">Go to Home</button> </a>
+    <form action="/main/newPost" method="POST" enctype="multipart/form-data">
+        <label for="caption">Caption</label>
+        <input type="text" placeholder="Image Caption" name="caption" id="caption" required />
+        <label for="image">Upload Image</label>
+        <input type="file" name="image" id="image" value="" required />
+        <button type='submit' class="button">Create Post</button>
+
+</body>
+
+</html>

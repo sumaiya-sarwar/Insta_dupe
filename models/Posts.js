@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
 
 const postsSchema = new mongoose.Schema({
-    image: { type: String, required: [true, 'You must link to an image'] },
-    likes: { type: Number, min: [0, 'likes can not be negative'] },
+    image: {
+        data: { type: Buffer },
+        contentType: { type: String }
+    },
+    caption: { type: String, required: [true, 'post must have a caption'] },
+    likes: { type: Number, min: [0, 'likes can not be negative'], default: 0 },
     user: { type: mongoose.Types.ObjectId, ref: "User" },
     comments: [{ type: mongoose.Types.ObjectId, ref: 'Comments' }]
 }, { timestamps: true });
