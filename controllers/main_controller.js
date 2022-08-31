@@ -40,15 +40,18 @@ router.post('/newPost', upload.single('image'), async (req, res) => {
         }
 
         const uploadImage = await db.Posts.create(newImgObj);
-        res.redirect('main/posts');
+        res.redirect(`feed`);
 
     } catch (err) {
         console.log(err);
     }
 })
 
-router.get('/posts', (req, res) => {
-    res.render('posts.ejs')
+router.get('/feed', async (req, res) => {
+    const posts = await db.Posts.find();
+    context = { posts: posts };
+
+    res.render('feed.ejs', context)
 });
 
 module.exports = router; 
