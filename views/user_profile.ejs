@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="../public/style/user_profile.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +24,15 @@
         <img class="profileImage" src="<%=user.image%>" alt="user profile image">
     </div>
     <div class="profileStats">
-        <h3>
-            <%=user.followers%> followers
+        <h3 class="mr">
+
+            <%=user.posts.length%> posts
         </h3>
-        <h3>
+        <h3 class="mr">
             <%=user.following%> following
         </h3>
-
-        <h3>
-            <%=user.posts.length%> posts
+        <h3 class="mr">
+            <%=user.followers%> followers
         </h3>
     </div>
     <div class="bio">

@@ -1,0 +1,42 @@
+body {
+    justify-content: center;
+    align-items: center;
+  }
+  .profileImageContainer { 
+    width: 75px; 
+    height: 75px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    padding: 0px 0px 0px 0px;
+    margin: 50px 50px 0px 600px;
+    justify-content: center;
+    align-items: center;
+    justify: center;
+    float: left;
+  }
+  .profileImage {
+    max-width: 75px;
+    max-height: 75px;
+    min-width: 75px;
+    min-height: 75px;
+  }
+  .bio {
+  }
+  .username {
+    font-size: 24px;
+    font-family: arial;
+    color: rgb(50, 50, 50);
+    padding: 0px 0px 10px 0px;
+    margin: 60px 20px 0px 0px;
+  }
+  .profileStats {
+   display: flex;
+    padding: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 0px;
+    background-color: rgb(220,220,220);
+    max-width: 180px;
+  }
+  .mr {
+    margin-right: 1em;
+    font-size: 14px;
+  }
