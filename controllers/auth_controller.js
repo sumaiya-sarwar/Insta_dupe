@@ -3,69 +3,75 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const { User } = require("../models");
 
+// express.json() and express.urlencoded is needed for POST and PUT requests to take in data payloads.
+// built in method to recognize incoming request object as a JSON object
+router.use(express.json());
+router.use(express.urlencoded({ extended: false }));
 
+router.get("/home", function (req, res) {
+  res.render("home.ejs");
+});
 
 router.get("/signup", function (req, res) {
-    return res.render("/signup");
+    return res.render("signup.ejs");
   });
 
-  router.get("/home", function (req, res) {
-    res.render("/home");
-  });
+  //login
+router.post("/home", async function (req, res, next) {
+  try {
+    const foundUser = await User.findOne({ username: req.body.username });
+    console.log(foundUser);
+    if (!foundUser) {
+      return res.redirect("/signup");
+    } else {
+      const match = await bcrypt.compare(req.body.password, foundUser.password);
+      if (!match) return res.send("password invalid");
+      req.session.currentUser = {
+        id: foundUser._id,
+        username: foundUser.username,
+      };
+    }
+
+    return res.redirect(`${foundUser._id}/profile`);
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+    next()
+  }
+});
+
 
 //signup
-  router.post("/signup", async function (req, res) {
+  router.post("/signup", async function (req, res, next) {
     try {
     
       const foundUser = await User.exists({ username: req.body.username });
 
       if (foundUser) {
-        return res.redirect("/home");
+        console.log(foundUser._id)
       }
-  
-  
-      const salt = await bcrypt.genSalt(10);
+      else {
+        const salt = await bcrypt.genSalt(10);
       
-      const hash = await bcrypt.hash(req.body.password, salt);
-  
-      req.body.password = hash;
-  
-  
-      const newUser = await User.create(req.body);
-  
-      return res.redirect("/home");
+        const hash = await bcrypt.hash(req.body.password, salt);
+    
+        req.body.password = hash;
+    
+    
+        const newUser = await User.create(req.body);
+      // console.log(newUser)
+      console.log(newUser._id)
+        return res.redirect(`user/${newUser._id}/profile`);
+      }
+     
     } catch (err) {
       console.log(err);
       return res.send(err);
+      next()
     }
   });
 
-//login
-router.post("/login", async function (req, res) {
-    try {
-     
-      const foundUser = await User.findOne({ username: req.body.username });
-      console.log(foundUser);
-   
-      if (!foundUser) return res.redirect("/signup");
-  
-      
-      const match = await bcrypt.compare(req.body.password, foundUser.password);
-  
 
-      if (!match) return res.send("password invalid");
-
-      req.session.currentUser = {
-        id: foundUser._id,
-        username: foundUser.username,
-      };
-  
-      return res.redirect(`${foundUser._id}/profile`);
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  });
 
   //logout
   router.get("/logout", async function (req, res) {
