@@ -8,6 +8,7 @@ require('dotenv').config();
 
 const userController = require('./controllers/user_controller');
 const mainController = require('./controllers/main_controller');
+const imageController = require('./controllers/image_controller')
 
 const app = express();
 const PORT = 4000;
@@ -29,6 +30,7 @@ app.use(session({
 
 app.use('', userController);
 app.use('/', mainController);
+app.use('/', imageController);
 
 // app.get('/*', (req, res) => {
 //     res.render('404.ejs')
