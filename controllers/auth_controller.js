@@ -13,19 +13,19 @@ router.get("/home", function (req, res) {
 });
 
 router.get("/signup", function (req, res) {
-    return res.render("signup.ejs");
-  });
+  return res.render("signup.ejs");
+});
 
-  //login
+//login
 router.post("/home", async function (req, res, next) {
   try {
-    
+
     const foundUser = await User.findOne({ username: req.body.username });
-   
-     console.log('user', foundUser);
-   
+
+    console.log('user', foundUser);
+
     if (!foundUser) {
-        console.log(foundUser, 'user')
+      console.log(foundUser, 'user')
       return res.redirect('/home');
     } else {
       const match = await bcrypt.compare(req.body.password, foundUser.password);
@@ -35,7 +35,7 @@ router.post("/home", async function (req, res, next) {
         username: foundUser.username,
       };
     }
-     return res.redirect(`user/${foundUser._id}/profile`);
+    return res.redirect(`user/${foundUser._id}/profile`);
   } catch (err) {
     console.log(err);
     res.send(err);
@@ -45,46 +45,47 @@ router.post("/home", async function (req, res, next) {
 
 
 //signup
-  router.post("/signup", async function (req, res, next) {
-    try {
-    
-      const foundUser = await User.exists({ username: req.body.username });
+router.post("/signup", async function (req, res, next) {
+  try {
 
-      if (foundUser) {
-        console.log(foundUser._id)
-      }
-      else {
-        const salt = await bcrypt.genSalt(10);
-      
-        const hash = await bcrypt.hash(req.body.password, salt);
-    
-        req.body.password = hash;
-    
-    
-        const newUser = await User.create(req.body);
+    const foundUser = await User.exists({ username: req.body.username });
+
+    if (foundUser) {
+      console.log(foundUser._id)
+      res.redirect('/login')
+    }
+    else {
+      const salt = await bcrypt.genSalt(10);
+
+      const hash = await bcrypt.hash(req.body.password, salt);
+
+      req.body.password = hash;
+
+
+      const newUser = await User.create(req.body);
       // console.log(newUser)
       console.log(newUser._id)
-        return res.redirect(`user/${newUser._id}/profile`);
-      }
-     
-    } catch (err) {
-      console.log(err);
-      return res.send(err);
-      next()
+      return res.redirect(`/home`);
     }
-  });
+
+  } catch (err) {
+    console.log(err);
+    return res.send(err);
+    next()
+  }
+});
 
 
 
-  //logout
-  router.get("/logout", async function (req, res) {
-    try {
-      await req.session.destroy();
-      return res.redirect("/home");
-    } catch (error) {
-      console.log(error);
-      return res.send(error);
-    }
-  });
+//logout
+router.get("/logout", async function (req, res) {
+  try {
+    await req.session.destroy();
+    return res.redirect("/home");
+  } catch (error) {
+    console.log(error);
+    return res.send(error);
+  }
+});
 
 module.exports = router;

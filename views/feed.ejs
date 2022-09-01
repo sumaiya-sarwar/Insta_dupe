@@ -20,6 +20,12 @@
         </h1>
       </div>
     </div>
+    <form>
+      <button>Edit</button>
+    </form>
+    <form action="/main/feed/<%=post._id%>?_method=DELETE" method="POST">
+      <button>Delete Post</button>
+    </form>
     <% }) %>
 </body>
 
