@@ -43,7 +43,7 @@ router.post('/newPost', upload.single('image'), async (req, res) => {
         }
 
         const uploadImage = await db.Posts.create(newImgObj);
-        res.redirect(`feed`);
+        res.redirect('feed');
 
     } catch (err) {
         console.log(err);
@@ -57,10 +57,29 @@ router.get('/feed', async (req, res) => {
     res.render('feed.ejs', context)
 });
 
+router.get('/feed/:postId/edit', async (req, res) => {
+    try {
+        const context = { postId: req.params.postId }
+        res.render('editPost.ejs', context)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+router.put('/feed/:postId/edit', async (req, res) => {
+    try {
+        updatedCaption = req.body;
+        await db.Posts.findByIdAndUpdate(req.params.postId, updatedCaption, { new: true })
+        res.redirect('/main/feed');
+    } catch (err) {
+        console.log(err);
+    }
+})
+
 router.delete('/feed/:postId', async (req, res) => {
     try {
         const deletedPost = await db.Posts.findByIdAndDelete(req.params.postId);
-        console.log(deletedPost)
+        res.redirect('/main/feed');
     } catch (err) {
         console.log(err);
     }
