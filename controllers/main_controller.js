@@ -26,17 +26,20 @@ router.get('/', (req, res) => {
 })
 
 router.get('/newPost', (req, res) => {
+    console.log(req.session.currentUser)
     res.render('newPost.ejs')
 })
 
 router.post('/newPost', upload.single('image'), async (req, res) => {
     try {
+        console.log(req.session)
         const newImgObj = {
             caption: req.body.caption,
             image: {
                 data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
                 contentType: 'image/png'
-            }
+            },
+            user: req.session.currentUser.id
         }
 
         const uploadImage = await db.Posts.create(newImgObj);
@@ -53,5 +56,14 @@ router.get('/feed', async (req, res) => {
 
     res.render('feed.ejs', context)
 });
+
+router.delete('/feed/:postId', async (req, res) => {
+    try {
+        const deletedPost = await db.Posts.findByIdAndDelete(req.params.postId);
+        console.log(deletedPost)
+    } catch (err) {
+        console.log(err);
+    }
+})
 
 module.exports = router; 
