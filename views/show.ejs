@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/style/feed.css">
+    <title>Instadupe</title>
 </head>
 <body>
-    <h1>show</h1>
+    <h1></h1>
     <img src="data:post/<%=post.image.contentType%>;base64,
     <%=post.image.data.toString('base64')%>">
     <%comments.forEach(function (comment) {%>
         <%=comment.context%>
-     
+        <div>
+            <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+        </div>
    <% })%>
-   <form>
-    <%-include('./comments.ejs', {comments: comments})%>
-   </form>
+ 
+    <%-include('./comments.ejs', {comments: comments, post: post})%>
+  
 </body>
 </html>
