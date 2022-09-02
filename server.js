@@ -46,4 +46,4 @@ app.route('/*', (req, res) => {
 
 
 
-app.listen(PORT, () => console.log('starting server at port:', PORT));
+app.listen(process.env.PORT || 4000);
