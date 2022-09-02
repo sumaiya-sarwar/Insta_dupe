@@ -7,35 +7,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instadupe</title>
 </head>
 <body>
  
         <form method="POST" action="/comments">
             <div class="comment">
-                <!-- <label for = "context"></label>
-                <input type="text" placeholder="Add a comment" name="context" id="context" required /> -->
-                <% if(comments) { %>
-                <% comments.forEach(function (comment) { %>
-                <h1>
-                    <%= comment.user.username %>
-                </h1>
-                   <%= comment.context %>
-                <% }) %>
-                <% } %>
-                
+            
                
             <div>
                 <label for="context">
                     <textarea id=context name="context"></textarea>
                 </label>
             </div>
-        
-            <button type="sumbit">Add a comment</button>
+            <input type="hidden" name="post" value="<%= post._id %>" />
+            <button type="submit">Add a comment</button>
  
-
-
-            </div>
+        </div>
+           
             
         </form>
    

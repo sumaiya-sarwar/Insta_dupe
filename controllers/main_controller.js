@@ -88,12 +88,19 @@ router.delete('/feed/:postId', async (req, res) => {
     }
 })
 
-router.get('/:postId', async (req, res) => {
-    const post = await db.Posts.findById(req.params.postId)
-    const comments = await db.Comments.find({post: req.params.postId});
-    const context = {post: post, comments: comments}
-    console.log(comments)
+router.get('/:postId',  (req, res) => {
+   db.Posts.findById(req.params.postId, (error, allPosts) => {
+        if (error) {
+            console.log(error);
+            req.error = error;
+            return next();
+        
+    }
+     db.Comments.find({post: req.params.postId},  (error, allComments) => {
+    const context = {post: allPosts, comments: allComments}
+    
     res.render('show.ejs', context)
-
+    })
+    })
 })
 module.exports = router; 

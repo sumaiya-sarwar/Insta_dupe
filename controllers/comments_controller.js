@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => {
 // new comment
 router.post('/', async (req, res, next) => {
     try{
-        console.log(req.session.currentUser)
+        
         if(req.session){ 
     
         const comment = {
@@ -34,7 +34,7 @@ router.post('/', async (req, res, next) => {
         }
         const newComment = await db.Comments.create(comment)
         console.log(newComment)
-        res.redirect('main/feed')
+        res.redirect('/main/'+newComment.post)
         }
         // console.log(req.session)
     }
@@ -74,8 +74,8 @@ router.post('/:commentId', async (req, res, next) => {
 // delete 
 router.delete('/:commentId',async (req, res, next)=>{
     try{
-        const deleteComment = await db.Comment.findByIdAndDelete(req.params.commentId)
-        res.redirect('comments')
+        const deleteComment = await db.Comments.findByIdAndDelete(req.params.commentId)
+        res.redirect('/main/'+deleteComment.post)
     }
     catch(err){
         console.log(err)
