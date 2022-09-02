@@ -10,10 +10,11 @@ require('dotenv').config();
 // get the MongoDB URL from .env file
 const connectionStr = process.env.MONGODB_URI;
 
-mongoose.connect(connectionStr);
+mongoose.connect(process.env.MONGODB_URI || connectionStr);
+
 
 mongoose.connection.on('connected', () => {
-  console.log(`[${new Date().toLocaleTimeString()}] - MongoDB connected ... 🙌 🙌 🙌`); 
+  console.log(`[${new Date().toLocaleTimeString()}] - MongoDB connected ... 🙌 🙌 🙌`);
 });
 
 mongoose.connection.on('error', (error) => {
