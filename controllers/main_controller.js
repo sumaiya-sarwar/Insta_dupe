@@ -52,7 +52,9 @@ router.post('/newPost', upload.single('image'), async (req, res) => {
 
 router.get('/feed', async (req, res) => {
     const posts = await db.Posts.find();
-    context = { posts: posts };
+    const comments = await db.Comments.find().populate('user')
+    console.log(comments)
+    context = { posts: posts, comments: comments };
 
     res.render('feed.ejs', context)
 });
