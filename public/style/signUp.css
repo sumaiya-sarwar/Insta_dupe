@@ -3,6 +3,9 @@ html {
     color: rgb(0, 0, 0);
   text-align: center;
 }
+.container {
+  display: flex;
+}
 * {
 box-sizing: border-box;
 } 
@@ -43,8 +46,11 @@ transition: 0.3s;
 }
 .inputs {
 border: 1px solid rgba(0, 0, 0, 0.4);;
-margin: 150px -20px 50px -20px;
-padding: 40px 90px 70px 90px;
+margin-left: 20px;
+margin-right: auto;
+margin-top: 8.5em;
+/* padding: 20px 9px 4px 9px; */
+padding: 40px;
 font-size: larger;
 border-color: rgba(164, 164, 164, 0.4);
 box-shadow: 6px 6px 7px 6px rgba(0, 0, 0, 0.4);
@@ -56,7 +62,10 @@ font-family: cursive;
 .slideshow-container {
 max-width: 600px;
 position: relative;
-margin: 175px 100px 100px 100px;
+/* margin: 175px 100px 100px 100px; */
+margin-left: 20px;
+margin-right: auto;
+margin-top: 8.5em;
 }
 
 /* Caption text */

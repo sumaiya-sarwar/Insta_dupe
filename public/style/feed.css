@@ -11,4 +11,10 @@ img {
     border: solid rgb(200, 200, 200) 1px;
     max-width: 600px;
     max-height: 660px;
+    padding: 30px;
+    margin-bottom: 1px;
+}
+.caption {
+    font-size: 14px;
+    font-weight: 50%;
 }
