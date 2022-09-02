@@ -13,8 +13,8 @@
  
         <form method="POST" action="/comments">
             <div class="comment">
-                <label for = "context"></label>
-                <input type="text" placeholder="Add a comment" name="context" id="context" required />
+                <!-- <label for = "context"></label>
+                <input type="text" placeholder="Add a comment" name="context" id="context" required /> -->
                 <% if(comments) { %>
                 <% comments.forEach(function (comment) { %>
                 <h1>
@@ -24,8 +24,19 @@
                 <% }) %>
                 <% } %>
                 
+               
+            <div>
+                <label for="context">
+                    <textarea id=context name="context"></textarea>
+                </label>
             </div>
-            <button type="submit">Add a Comment</button>
+        
+            <button type="sumbit">Add a comment</button>
+ 
+
+
+            </div>
+            
         </form>
    
     

@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
     res.render('home.ejs')
 })
 
+
 router.get('/newPost', (req, res) => {
     console.log(req.session.currentUser)
     res.render('newPost.ejs')
@@ -87,4 +88,12 @@ router.delete('/feed/:postId', async (req, res) => {
     }
 })
 
+router.get('/:postId', async (req, res) => {
+    const post = await db.Posts.findById(req.params.postId)
+    const comments = await db.Comments.find({post: req.params.postId});
+    const context = {post: post, comments: comments}
+    console.log(comments)
+    res.render('show.ejs', context)
+
+})
 module.exports = router; 
