@@ -10,6 +10,7 @@ require('dotenv').config();
 const userController = require('./controllers/user_controller');
 const mainController = require('./controllers/main_controller');
 const authController = require('./controllers/auth_controller')
+const commentsController = require('./controllers/comments_controller')
 
 const app = express();
 const PORT = 4000;
@@ -37,6 +38,7 @@ app.use(session({
 app.use('/user', userController);
 app.use('/main', mainController);
 app.use('', authController);
+app.use('/comments', commentsController);
 
 // wildcard route
 app.route('/*', (req, res) => {

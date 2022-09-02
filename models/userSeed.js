@@ -9,6 +9,7 @@ const users = [
         following: 5000,
         password: 'apples',
         bio: 'Currently in a bootcamp to become a softare engineer!'
+        
 
     },
     {
