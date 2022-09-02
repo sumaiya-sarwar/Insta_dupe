@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a class="buttton" href="/">
+        <button class="button">Go to Home</button> </a>
+    <form action="/main/feed/<%=postId%>/edit?_method=PUT" method="POST">
+        <label for="caption">Caption</label>
+        <input type="text" placeholder="Image Caption" name="caption" id="caption" required />
+        <button type='submit' class="button">Save Changes</button>
+</body>
+
+</html>
