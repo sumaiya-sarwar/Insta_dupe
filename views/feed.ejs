@@ -14,13 +14,14 @@
 <body>
   <% posts.forEach(function(post){ %>
     <div class="postContainer">
-      <img src="data:post/<%=post.image.contentType%>;base64,
-    <%=post.image.data.toString('base64')%>">
+      <a href="/main/<%=post._id%>"> <img src="data:post/<%=post.image.contentType%>;base64,
+    <%=post.image.data.toString('base64')%>"> </a>
       <div class="caption">
         <h1>
           <%=post.caption%>
         </h1>
       </div>
+  
     </div>
     <form>
       <button>Edit</button>
@@ -28,9 +29,12 @@
     <form action="/main/feed/<%=post._id%>?_method=DELETE" method="POST">
       <button>Delete Post</button>
     </form> 
-    <%-include('./comments.ejs', {comments: comments})%>
+     
+     <form action="/main/<%=post._id%>">
+      <button>Comment</button>
+    </form>
     <% }) %>
-
+     
 </body>
 
 </html>
