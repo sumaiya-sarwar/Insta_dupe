@@ -1,13 +1,14 @@
 img {
-    max-width: 800px;
-    max-height: 800px;
+    max-width: 580px;
+    max-height: 580px;
 }
 
 .postContainer {
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
-    border: solid black 3px;
+    margin: auto;
+    border: solid rgb(200, 200, 200) 1px;
+    max-width: 600px;
+    max-height: 660px;
 }
