@@ -9,21 +9,22 @@
     <title>
         <%=user.name%>'s Profile'>
     </title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
     <link rel="stylesheet" href="/style/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
 
     <nav class="navbar">
         <div>
-             <a href="/main/feed"> Feed </a>
-             <a href="/main/newPost"> Post </a>
-             <a href="user//profile"> User Profile </a>
-             <a href="/logout"> Logout</a>
+            <a href="/main/feed"> Feed </a>
+            <a href="/main/newPost"> Post </a>
+            <a href="/user/<%=userId%>/profile"> User Profile </a>
+            <a href="/logout"> Logout</a>
         </div>
     </nav>
 
@@ -48,9 +49,9 @@
             <%=user.bio%>
         </p>
     </div>
-  
+
     <!-- logout button -->
-  <a href="/logout">logout</a>
+    <a href="/logout">logout</a>
 
     <div>
         <h3>Posts</h3>

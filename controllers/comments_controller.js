@@ -10,10 +10,10 @@ const db = require('../models')
 router.get('/', async (req, res, next) => {
     try {
         const allComments = await db.Comment.find()
-        .populate('Posts')
-        .exec()
+            .populate('Posts')
+            .exec()
         const allPosts = await db.Posts.find({})
-        res.render('comments', {comments: allComments, posts: allPosts})
+        res.render('comments', { comments: allComments, posts: allPosts, userId: req.session.currentUser.id })
     }
     catch (err) {
         console.log(err);
@@ -23,18 +23,18 @@ router.get('/', async (req, res, next) => {
 });
 // new comment
 router.post('/', async (req, res, next) => {
-    try{
-        
-        if(req.session){ 
-    
-        const comment = {
-            ...req.body,
-            user: req.session.currentUser.id,
-            username: req.session.currentUser.username,
-        }
-        const newComment = await db.Comments.create(comment)
-        console.log(newComment)
-        res.redirect('/main/'+newComment.post)
+    try {
+
+        if (req.session) {
+
+            const comment = {
+                ...req.body,
+                user: req.session.currentUser.id,
+                username: req.session.currentUser.username,
+            }
+            const newComment = await db.Comments.create(comment)
+            console.log(newComment)
+            res.redirect('/main/' + newComment.post)
         }
         // console.log(req.session)
     }
@@ -46,12 +46,12 @@ router.post('/', async (req, res, next) => {
 })
 
 // edit
-router.get('/:commentId/editcomments', async (req, res, next)=>{
-    try{
+router.get('/:commentId/editcomments', async (req, res, next) => {
+    try {
         const editComment = await db.Comment.findById(req.params.commentId);
-        res.render('editcomments', {selectedComment: editComment})
+        res.render('editcomments', { selectedComment: editComment, userId: req.session.currentUser.id })
     }
-    catch(err){
+    catch (err) {
         console.log(err)
         req.error = err
         return next()
@@ -59,12 +59,12 @@ router.get('/:commentId/editcomments', async (req, res, next)=>{
 })
 // update
 router.post('/:commentId', async (req, res, next) => {
-    try{
-        const updatedComment = await db.Comment.findByIdAndUpdate(req.params.commentId, req.body, {new: true})
-        
+    try {
+        const updatedComment = await db.Comment.findByIdAndUpdate(req.params.commentId, req.body, { new: true })
+
         res.redirect(`/posts/${updatedComment}`)
     }
-    catch(err){
+    catch (err) {
         console.log(err)
         req.error = err
         return next();
@@ -72,12 +72,12 @@ router.post('/:commentId', async (req, res, next) => {
 })
 
 // delete 
-router.delete('/:commentId',async (req, res, next)=>{
-    try{
+router.delete('/:commentId', async (req, res, next) => {
+    try {
         const deleteComment = await db.Comments.findByIdAndDelete(req.params.commentId)
-        res.redirect('/main/'+deleteComment.post)
+        res.redirect('/main/' + deleteComment.post)
     }
-    catch(err){
+    catch (err) {
         console.log(err)
         req.error = err
         return next()

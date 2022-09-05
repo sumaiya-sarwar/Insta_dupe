@@ -27,8 +27,8 @@ router.get('/', (req, res) => {
 
 
 router.get('/newPost', (req, res) => {
-    console.log(req.session.currentUser)
-    res.render('newPost.ejs')
+    context = { userId: req.session.currentUser.id }
+    res.render('newPost.ejs', context)
 })
 
 router.post('/newPost', upload.single('image'), async (req, res) => {
@@ -55,14 +55,14 @@ router.get('/feed', async (req, res) => {
     const posts = await db.Posts.find();
     const comments = await db.Comments.find().populate('user')
     console.log(comments)
-    context = { posts: posts, comments: comments };
+    context = { posts: posts, comments: comments, userId: req.session.currentUser.id };
 
     res.render('feed.ejs', context)
 });
 
 router.get('/feed/:postId/edit', async (req, res) => {
     try {
-        const context = { postId: req.params.postId }
+        const context = { postId: req.params.postId, userId: req.session.currentUser.id }
         res.render('editPost.ejs', context)
     } catch (err) {
         console.log(err)
@@ -88,19 +88,19 @@ router.delete('/feed/:postId', async (req, res) => {
     }
 })
 
-router.get('/:postId',  (req, res) => {
-   db.Posts.findById(req.params.postId, (error, allPosts) => {
+router.get('/:postId', (req, res) => {
+    db.Posts.findById(req.params.postId, (error, allPosts) => {
         if (error) {
             console.log(error);
             req.error = error;
             return next();
-        
-    }
-     db.Comments.find({post: req.params.postId},  (error, allComments) => {
-    const context = {post: allPosts, comments: allComments}
-    
-    res.render('show.ejs', context)
-    })
+
+        }
+        db.Comments.find({ post: req.params.postId }, (error, allComments) => {
+            const context = { post: allPosts, comments: allComments, userId: req.session.currentUser.id }
+
+            res.render('show.ejs', context)
+        })
     })
 })
 module.exports = router; 

@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/feed.css">
-    <link rel="icon" href="/favicon.ico" >
     <title>Instadupe</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
 </head>
+
 <body>
-    <h1></h1>
+    <nav class="topnav">
+        <div>
+            <a href="/main/feed"> Feed </a>
+            <a href="/main/newPost"> Post </a>
+            <a href="/user/<%=userId%>/profile"> User Profile </a>
+            <a href="/logout"> Logout</a>
+        </div>
+    </nav>
     <img src="data:post/<%=post.image.contentType%>;base64,
     <%=post.image.data.toString('base64')%>">
     <%comments.forEach(function (comment) {%>
         <%=comment.context%>
-        <div>
-            <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
-            <button>Delete</button>
-        </form>
-        </div>
-   <% })%>
- 
-    <%-include('./comments.ejs', {comments: comments, post: post})%>
-  
+            <div>
+                <form action="/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+            </div>
+            <% })%>
+
+                <%-include('. /comments.ejs', {comments: comments, post: post})%>
+
 </body>
+
 </html>
