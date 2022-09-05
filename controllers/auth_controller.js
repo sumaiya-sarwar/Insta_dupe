@@ -8,6 +8,10 @@ const { User } = require("../models");
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
+router.get("", (req, res) => {
+  res.redirect("/home");
+})
+
 router.get("/home", function (req, res) {
   res.render("home.ejs");
 });
