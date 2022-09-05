@@ -23,5 +23,5 @@ This is a group project where we reversed engineered version of the popular soci
 ---
 
 ## Whats Next
---
+---
 We can continue to add features to make it even more like Instagram. We can implement a like button as well as adding functionality to create followers and being able to follow other accounts. We can update the feed to only display posts from people you follow. Comments can be moved from their own page and instead incorporated into the feed.
