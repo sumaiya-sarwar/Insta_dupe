@@ -20,7 +20,7 @@ This is a group project where we reversed engineered version of the popular soci
 **MongoDB/Mongoose** were used to store our data through schemas we defined. We use 3 different schemas for this app and all the data is stored with MongoDB.
 
 ## Screenshots
----
+!(https://imgur.com/iSB7o8X)
 
 ## Whats Next
 ---
