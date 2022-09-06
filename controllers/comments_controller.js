@@ -83,4 +83,27 @@ router.delete('/:commentId',async (req, res, next)=>{
         return next()
     }
 })
+
+
+const btn1 = document.querySelector('#like');
+const btn2 = document.querySelector('#dislike');
+
+btn1.addEventListener('click', function() {
+  
+    if (btn2.classList.contains('dislike')) {
+      btn2.classList.remove('dislike');
+    } 
+  this.classList.toggle('like');
+  
+});
+
+btn2.addEventListener('click', function() {
+  
+    if (btn1.classList.contains('like')) {
+      btn1.classList.remove('like');
+    } 
+  this.classList.toggle('dislike');
+  
+});
+
 module.exports = router

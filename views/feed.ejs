@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://kit.fontawesome.com/fb5c6b36cf.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
@@ -27,7 +28,10 @@
     <div class="postContainer">
       <a href="/main/<%=post._id%>"> <img src="data:post/<%=post.image.contentType%>;base64,
     <%=post.image.data.toString('base64')%>"> </a>
-      <div class="caption">
+    <button class="btn" id="like"><i class="fa-regular fa-heart"></i></button>  
+    <button class="btn" id="dislike"><i class="fa-solid fa-heart-crack"></i></button>  
+    
+    <div class="caption">
         <h1>
           <%=post.caption%>
         </h1>
