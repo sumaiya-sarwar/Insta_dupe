@@ -5,8 +5,8 @@ img {
 
 .postContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction:column;
+    align-items:center;
     margin: auto;
     max-width: 600px;
     max-height: 660px;
@@ -37,10 +37,15 @@ img {
   
   /* Style the links inside the navigation bar */
   .topnav a {
+<<<<<<< HEAD
     float: left;
     color: #000000;
+=======
+   float: left;
+    color: #f2f2f2;
+>>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 30px;
     text-decoration: none;
     font-size: 17px;
     text-align: right;
@@ -55,6 +60,7 @@ img {
   /* Add a color to the active/current link */
   .topnav a.active {
     background-color: #04AA6D;
+<<<<<<< HEAD
     color: rgb(0, 0, 0);
   }
 
@@ -102,4 +108,31 @@ img {
   }
   .mr:hover {
     background-color: #abababaf;
+=======
+    color: white;
+  }
+
+  /* like btn */
+  body{
+    margin: 40px;
+  }
+  
+  button{
+    cursor: pointer;
+    outline: 0;
+    color: #AAA;
+  
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  #like{
+    color: red;
+  }
+  
+  #dislike{
+    color: black;
+>>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
   }

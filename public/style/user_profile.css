@@ -51,6 +51,7 @@ body {
     padding: 10px;
   }
   
+<<<<<<< HEAD
   .dupe {
     font-family: cursive;
     float: left;
@@ -58,6 +59,9 @@ body {
 }
   
   /* Style the links inside the navigation bar */
+=======
+
+>>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
   .topnav a {
     float: left;
     color: #000000;
@@ -68,13 +72,13 @@ body {
     text-align: right;
   }
   
-  /* Change the color of links on hover */
+
   .topnav a:hover {
     background-color: #cdcbcb ;
     color: black;
   }
   
-  /* Add a color to the active/current link */
+ 
   .topnav a.active {
     background-color: #04AA6D;
     color: rgb(0, 0, 0);
