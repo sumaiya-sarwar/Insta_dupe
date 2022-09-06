@@ -1,6 +1,6 @@
 img {
-    max-width: 580px;
-    max-height: 580px;
+    width: 580px;
+    height: 580px;
 }
 
 .postContainer {
@@ -9,14 +9,12 @@ img {
     align-items:center;
     margin: auto;
     max-width: 600px;
-    max-height: 660px;
+    max-height: 600px;
     padding: 30px;
     margin-bottom: 1px;
 }
 .caption {
     font-size: 10px;
-    position: relative;
-    left: 1px;
 }
 
 .topnav{
@@ -37,13 +35,8 @@ img {
   
   /* Style the links inside the navigation bar */
   .topnav a {
-<<<<<<< HEAD
-    float: left;
-    color: #000000;
-=======
    float: left;
-    color: #f2f2f2;
->>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
+    color: #000000;
     text-align: center;
     padding: 16px 30px;
     text-decoration: none;
@@ -60,7 +53,6 @@ img {
   /* Add a color to the active/current link */
   .topnav a.active {
     background-color: #04AA6D;
-<<<<<<< HEAD
     color: rgb(0, 0, 0);
   }
 
@@ -87,6 +79,7 @@ img {
     min-width: 20px;
     box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
     z-index: 1;
+    color:rgb(0, 0, 0);
   }
   
   .dropdown-content a {
@@ -105,11 +98,11 @@ img {
   .mr {
     border: none;
     padding: 2px;
+    color: rgb(0, 0, 0);
   }
   .mr:hover {
     background-color: #abababaf;
-=======
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   /* like btn */
@@ -121,9 +114,10 @@ img {
     cursor: pointer;
     outline: 0;
     color: #AAA;
-  
+    align-content: center;
   }
   
+
   .btn:focus {
     outline: none;
   }
@@ -134,5 +128,4 @@ img {
   
   #dislike{
     color: black;
->>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
   }
