@@ -7,9 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
   <link rel="stylesheet" href="/style/feed.css">
-  
   <title>Instadupe</title>
-  <link rel="icon" href="/favicon.ico" >
+  <link rel="icon" type="image/x-icon" href="../favicon.png">
 </head>
 
 
@@ -17,12 +16,12 @@
 
   <nav class="topnav">
     <div>
-         <a href="/main/feed"> Feed </a>
-         <a href="/main/newPost"> Post </a>
-         <a href="/user_profile"> User Profile </a>
-         <a href="/logout"> Logout</a>
+      <a href="/main/feed"> Feed </a>
+      <a href="/main/newPost"> Post </a>
+      <a href="/user/<%=userId%>/profile"> User Profile </a>
+      <a href="/logout"> Logout</a>
     </div>
-</nav>
+  </nav>
 
   <% posts.forEach(function(post){ %>
     <div class="postContainer">
@@ -36,20 +35,20 @@
           <%=post.caption%>
         </h1>
       </div>
-  
+
     </div>
     <form action="/main/feed/<%=post._id%>/edit">
       <button>Edit Caption</button>
     </form>
     <form action="/main/feed/<%=post._id%>?_method=DELETE" method="POST">
       <button>Delete Post</button>
-    </form> 
-     
-     <form action="/main/<%=post._id%>">
+    </form>
+
+    <form action="/main/<%=post._id%>">
       <button>Comment</button>
     </form>
     <% }) %>
-     
+
 </body>
 
 </html>

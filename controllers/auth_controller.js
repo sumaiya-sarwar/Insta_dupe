@@ -52,6 +52,7 @@ router.post("/home", async function (req, res, next) {
 router.post("/signup", async function (req, res, next) {
   try {
 
+    console.log("sign up")
     const foundUser = await User.exists({ username: req.body.username });
 
     if (foundUser) {

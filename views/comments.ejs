@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-      
+
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico" >
     <title>Instadupe</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
 
 </head>
+
 <body>
- 
-        <form method="POST" action="/comments">
-            <div class="comment">
-            
-               
+
+    <form method="POST" action="/comments">
+        <div class="comment">
+
+
             <div>
                 <label for="context">
                     <textarea id=context name="context"></textarea>
@@ -24,14 +26,15 @@
             </div>
             <input type="hidden" name="post" value="<%= post._id %>" />
             <button type="submit">Add a comment</button>
- 
+
         </div>
-           
-            
-        </form>
-   
-    
-    
+
+
+    </form>
+
+
+
 
 </body>
+
 </html>

@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="/style/signUp.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico" >
-    <title>Sign up</title>
+  <link rel="stylesheet" href="/style/signUp.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.png">
 </head>
+
 <body>
   <div class="container">
     <div class="slideshow-container">
 
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 4</div>
-          <img alt="picture1" src="https://i.imgur.com/h2pAjMw.jpg" style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
-        </div>
-        
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 4</div>
-          <img alt="picture2" src="https://i.imgur.com/Hegu9Xw.jpg" style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
-        </div>
-        
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 4</div>
-          <img alt="picture3" src="https://i.imgur.com/20g3pYI.jpg" style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
-        </div>
-        <div class="mySlides fade">
-          <div class="numbertext">4 / 4</div>
-          <img alt="picture3" src="https://i.imgur.com/PBaqI7p.jpg" style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
-        </div>
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-        </div>
-        </div>
-        <br>
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 4</div>
+        <img alt="picture1" src="https://i.imgur.com/h2pAjMw.jpg"
+          style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
+      </div>
 
-<div action="/signup" method="POST" class="inputs">
-    <h1>Instadupe</h1>
-<div style="margin: 6px;">
-    <label for="username"></label>
-    <input placeholder="Username" size="35" type="text" id="username" name="username" required>
-</div>
-<div  style="margin: 6px;">
-    <label for="name"></label>
-    <input placeholder="Name" size="35" style="margin: 0px 0px 0px 0px;" type="text" id="name" name="name" required>
-</div>
-<div style="margin: 6px;">
-    <label for="password"></label>
-    <input placeholder="password" size="35" type="password" id="password" name="password" required>
-</div>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 4</div>
+        <img alt="picture2" src="https://i.imgur.com/Hegu9Xw.jpg"
+          style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
+      </div>
 
-<div class="loginup">
-<button class="sign">Sign Up</button>
-<button class="login"><a style="text-decoration: none; color: whitesmoke;" href="/home">Log In</a></button>
-</div>
-</div>
-</form>
-<script src="scripts/signUp.js"></script>
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 4</div>
+        <img alt="picture3" src="https://i.imgur.com/20g3pYI.jpg"
+          style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img alt="picture3" src="https://i.imgur.com/PBaqI7p.jpg"
+          style="max-width: 300px; max-height: 400px; min-width: 300px; min-height: 400px;">
+      </div>
+      <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <br>
+
+    <form action="/signup" method="POST" class="inputs">
+      <h1>Instadupe</h1>
+      <div style="margin: 6px;">
+        <label for="username"></label>
+        <input placeholder="Username" size="35" type="text" id="username" name="username" required>
+      </div>
+      <div style="margin: 6px;">
+        <label for="name"></label>
+        <input placeholder="Name" size="35" style="margin: 0px 0px 0px 0px;" type="text" id="name" name="name" required>
+      </div>
+      <div style="margin: 6px;">
+        <label for="password"></label>
+        <input placeholder="password" size="35" type="password" id="password" name="password" required>
+      </div>
+
+      <div class="loginup">
+        <button type="submit" class="sign">Sign Up</button>
+        <button class="login"><a style="text-decoration: none; color: whitesmoke;" href="/home">Log In</a></button>
+      </div>
+  </div>
+  </form>
+  <script src="scripts/signUp.js"></script>
 </body>
-</html>
 
+</html>
