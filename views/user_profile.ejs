@@ -21,7 +21,7 @@
 
     <nav class="topnav">
         <div>
-            <h1 class="dupe" >Instadupe</h1>
+            <h1 class="dupe">Instadupe</h1>
             <a href="/main/feed"> Feed </a>
             <a href="/main/newPost"> Post </a>
             <a href="/user/<%=userId%>/profile"> User Profile </a>
@@ -31,35 +31,41 @@
 
     <!-- basic layout to test database connection and starting point for layout -->
     <div class="group">
-    <div class="profileImageContainer">
-        <img class="profileImage" src="<%=user.image%>" alt="user profile image">
-    </div>
-    <div class="username">
-        <h6><%=user.name%></h6>
-    </div>
-    <div class="profileStats">
-        <h3 class="mr">
+        <div class="profileImageContainer">
+            <img class="profileImage" src="<%=user.image%>" alt="user profile image">
+        </div>
+        <div class="username">
+            <h6>
+                <%=user.name%>
+            </h6>
+        </div>
+        <div class="profileStats">
+            <h3 class="mr">
 
-            <%=user.following%> following
-        </h3>
-        <h3 class="mr">
-            <%=user.followers%> followers
-        </h3>
-    </div>
-    <div class="bio">
-        <p>
-            <%=user.bio%>
-        </p>
-    </div>
+                <%=user.following%> following
+            </h3>
+            <h3 class="mr">
+                <%=user.followers%> followers
+            </h3>
+        </div>
+        <div class="bio">
+            <p>
+                <%=user.bio%>
+            </p>
+        </div>
     </div>
     <!-- logout button -->
     <!-- <a href="/logout">logout</a>
 
     <div> -->
-        <h3>Posts</h3>
-        <div>
-            <%= posts[0].caption %>
-        </div>
+    <h3>Posts</h3>
+    <div>
+        <% for(let i=0; i < posts.length; i++) { %>
+            <img src="data:post/<%=posts[i].image.contentType%>;base64,
+                <%=posts[i].image.data.toString('base64')%>">
+            <%= posts[i].caption %>
+                <%}%>
+    </div>
     </div>
 
 </body>
