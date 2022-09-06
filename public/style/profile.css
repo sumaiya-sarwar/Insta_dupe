@@ -37,3 +37,41 @@ body {
     justify-content: center;
     font-size: 30px;
 }
+.topnav{
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    border: 3px solid rgba(164, 164, 164, 0.4);
+    color: black;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 10px;
+  }
+  
+  .dupe {
+    font-family: cursive;
+    float: left;
+    margin: auto;
+}
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    text-align: right;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #cdcbcb ;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: rgb(0, 0, 0);
+  }

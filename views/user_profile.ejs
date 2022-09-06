@@ -19,8 +19,9 @@
 
 <body>
 
-    <nav class="navbar">
+    <nav class="topnav">
         <div>
+            <h1 class="dupe" >Instadupe</h1>
             <a href="/main/feed"> Feed </a>
             <a href="/main/newPost"> Post </a>
             <a href="/user/<%=userId%>/profile"> User Profile </a>
@@ -29,11 +30,12 @@
     </nav>
 
     <!-- basic layout to test database connection and starting point for layout -->
-    <div class="username">
-        <%=user.name%>
-    </div>
+    <div class="group">
     <div class="profileImageContainer">
         <img class="profileImage" src="<%=user.image%>" alt="user profile image">
+    </div>
+    <div class="username">
+        <h6><%=user.name%></h6>
     </div>
     <div class="profileStats">
         <h3 class="mr">
@@ -49,11 +51,11 @@
             <%=user.bio%>
         </p>
     </div>
-
+    </div>
     <!-- logout button -->
-    <a href="/logout">logout</a>
+    <!-- <a href="/logout">logout</a>
 
-    <div>
+    <div> -->
         <h3>Posts</h3>
         <div>
             <%= posts[0].caption %>
