@@ -58,16 +58,14 @@
     <!-- <a href="/logout">logout</a>
 
     <div> -->
-    <h3>Posts</h3>
-    <div>
+   
+    <div class="posts">
         <% for(let i=0; i < posts.length; i++) { %>
             <img src="data:post/<%=posts[i].image.contentType%>;base64,
                 <%=posts[i].image.data.toString('base64')%>">
-            <%= posts[i].caption %>
+           <h1> <%= posts[i].caption %> </h1>
                 <%}%>
     </div>
-    </div>
-
 </body>
 
 </html>

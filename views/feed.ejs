@@ -47,15 +47,14 @@
       </div>
       <a href="/main/<%=post._id%>"> <img src="data:post/<%=post.image.contentType%>;base64,
     <%=post.image.data.toString('base64')%>"> </a>
-      <div class="caption">
-        <h1 style="align-items: left;">
+    <div class="caption">
+      <h1>
+        <%=post.caption%>
+      </h1>
           <button class="btn" id="like"><i class="fa-regular fa-heart"></i></button>
           <button class="btn" id="dislike"><i class="fa-solid fa-heart-crack"></i></button>
 
-          <div class="caption">
-            <h1>
-              <%=post.caption%>
-            </h1>
+
           </div>
 
           <% }) %>
