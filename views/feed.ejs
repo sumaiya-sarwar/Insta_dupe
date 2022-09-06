@@ -16,6 +16,7 @@
 
   <nav class="topnav">
     <div>
+      <h1 class="dupe" >Instadupe</h1>
       <a href="/main/feed"> Feed </a>
       <a href="/main/newPost"> Post </a>
       <a href="/user/<%=userId%>/profile"> User Profile </a>
@@ -25,28 +26,39 @@
 
   <% posts.forEach(function(post){ %>
     <div class="postContainer">
+      <div class="buttons">
+        <div class="dropdown">
+          <button style="text-align: right;" class="dropbtn"><h1>: :</h1></button>
+          <div class="dropdown-content">
+      <form action="/main/feed/<%=post._id%>/edit">
+        <button class="mr">Edit Caption</button>
+      </form>
+      <form action="/main/feed/<%=post._id%>?_method=DELETE" method="POST">
+        <button class="mr">Delete Post</button>
+      </form>
+  
+      <form action="/main/<%=post._id%>">
+        <button class="mr">Comment</button>
+      </form>
+      </div>
+    </div>
+  </div>
       <a href="/main/<%=post._id%>"> <img src="data:post/<%=post.image.contentType%>;base64,
     <%=post.image.data.toString('base64')%>"> </a>
+<<<<<<< HEAD
+      <div class="caption">
+        <h1 style="align-items: left;">
+=======
     <button class="btn" id="like"><i class="fa-regular fa-heart"></i></button>  
     <button class="btn" id="dislike"><i class="fa-solid fa-heart-crack"></i></button>  
     
     <div class="caption">
         <h1>
+>>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
           <%=post.caption%>
         </h1>
       </div>
 
-    </div>
-    <form action="/main/feed/<%=post._id%>/edit">
-      <button>Edit Caption</button>
-    </form>
-    <form action="/main/feed/<%=post._id%>?_method=DELETE" method="POST">
-      <button>Delete Post</button>
-    </form>
-
-    <form action="/main/<%=post._id%>">
-      <button>Comment</button>
-    </form>
     <% }) %>
 
 </body>

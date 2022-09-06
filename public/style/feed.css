@@ -8,30 +8,47 @@ img {
     flex-direction:column;
     align-items:center;
     margin: auto;
-    border: solid rgb(200, 200, 200) 1px;
     max-width: 600px;
     max-height: 660px;
     padding: 30px;
     margin-bottom: 1px;
 }
 .caption {
-    font-size: 14px;
-    font-weight: 50%;
+    font-size: 10px;
+    position: relative;
+    left: 1px;
 }
 
-.topnav {
-    background-color: pink;
+.topnav{
+    background-color: rgb(255, 255, 255);
     overflow: hidden;
+    border: 3px solid rgba(164, 164, 164, 0.4);
+    color: black;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 10px;
   }
+  
+  .dupe {
+    font-family: cursive;
+    float: left;
+    margin: auto;
+}
   
   /* Style the links inside the navigation bar */
   .topnav a {
+<<<<<<< HEAD
+    float: left;
+    color: #000000;
+=======
    float: left;
     color: #f2f2f2;
+>>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
     text-align: center;
     padding: 16px 30px;
     text-decoration: none;
     font-size: 17px;
+    text-align: right;
   }
   
   /* Change the color of links on hover */
@@ -43,6 +60,55 @@ img {
   /* Add a color to the active/current link */
   .topnav a.active {
     background-color: #04AA6D;
+<<<<<<< HEAD
+    color: rgb(0, 0, 0);
+  }
+
+/* dropdown css */
+.dropbtn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    position: relative;
+    left: 275px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 275px;
+    background-color: #f1f1f1;
+    min-width: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #a0a0a0;}
+
+  .mr {
+    border: none;
+    padding: 2px;
+  }
+  .mr:hover {
+    background-color: #abababaf;
+=======
     color: white;
   }
 
@@ -68,4 +134,5 @@ img {
   
   #dislike{
     color: black;
+>>>>>>> c03095cfe5a4dd8c1fab3dfb2b3481e37df57f94
   }
