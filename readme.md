@@ -21,11 +21,18 @@ This is a group project where we reversed engineered version of the popular soci
 
 ## Screenshots
 ---
-![Login Screen] (https://i.imgur.com/TrQeIrs.png)
-![Register Screen] (https://i.imgur.com/de7ZBZW.png)
-![User Profile] (https://i.imgur.com/1Rl5Iys.png)
-![Main Feed] (https://i.imgur.com/r5PXmsu.png)
-![Post] (https://i.imgur.com/g64yy7w.png)
+![Login Screen](https://i.imgur.com/TrQeIrs.png)
+This is our login screen. Includes a slideshow.
+![Register Screen](https://i.imgur.com/de7ZBZW.png)
+This is our registration page for a new account.
+![User Profile](https://i.imgur.com/1Rl5Iys.png)
+This is what a userprofile looks like populated with posts from the specific user.
+![Main Feed](https://i.imgur.com/r5PXmsu.png)
+The main feed of the site. It shows every post on the site.
+![Post](https://i.imgur.com/g64yy7w.png)
+The page when viewing a single post. Allows you to comment on it and see comments from other users.
+![Create Post](https://i.imgur.com/7mtqPGI.png)
+The page where you can upload a picture from your computer and add a caption to it to create a post.
 
 
 ## Whats Next
