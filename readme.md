@@ -19,6 +19,14 @@ This is a group project where we reversed engineered version of the popular soci
 
 **MongoDB/Mongoose** were used to store our data through schemas we defined. We use 3 different schemas for this app and all the data is stored with MongoDB.
 
+## Screenshots
+---
+![Login Screen] (https://i.imgur.com/TrQeIrs.png)
+![Register Screen] (https://i.imgur.com/de7ZBZW.png)
+![User Profile] (https://i.imgur.com/1Rl5Iys.png)
+![Main Feed] (https://i.imgur.com/r5PXmsu.png)
+![Post] (https://i.imgur.com/g64yy7w.png)
+
 
 ## Whats Next
 ---
