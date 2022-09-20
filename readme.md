@@ -1,4 +1,4 @@
-# Sean Buchas, Sumaiya Saraw, Manases Elias Lopez Gill | SEI Project 2 | Insta Dupe
+# Sean Buchas, Sumaiya Sarwar, Manases Elias Lopez Gill | SEI Project 2 | Insta Dupe
 
 ---
 
